@@ -174,17 +174,31 @@ body {
 }
 
 .start-section {
-    padding: 200px 300px;
     color: #f7b4a7;
     background-size: cover;
+    box-sizing: border-box;
 }
 
 #guide-content .start-section {
+    padding: 200px 300px;
     background: url(image/prof.png) no-repeat center center;
 }
 
 #job-content .start-section {
+    padding: 200px 300px;
     background: url(image/job.png) no-repeat center center;
+}
+
+#developer-content .start-section {
+    padding: 250px 300px;
+    background: url(image/developer-1.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+#interpreter-content .start-section {
+    padding: 250px 300px;
+    background: url(image/interpreter-1.jpg) no-repeat center center;
+    background-size: cover;
 }
 
 .mid-section {
@@ -673,6 +687,58 @@ body {
 .section2-button button:hover {
     background: #ababab;
     color: #fff;
+}
+
+.opportunity-section,
+.requirement-section,
+.info-section {
+    display: flex; /* Sử dụng flex để tạo bố cục 2 cột */
+    justify-content: space-between; /* Dàn đều khoảng cách giữa các phần */
+    align-items: flex-start; /* Canh trên cùng */
+    gap: 45px; /* Khoảng cách giữa các cột */
+}
+
+.info-section {
+    padding: 100px 100px 0px 100px;
+}
+
+.opportunity-section,
+.requirement-section {
+    padding: 65px 100px 0px 100px;
+}
+
+/* Phần bên trái chứa hình ảnh */
+.right-section img,
+.left-section img {
+    max-width: 100%; /* Đảm bảo ảnh không vượt quá kích thước container */
+    height: 320px; /* Giữ tỷ lệ của ảnh */
+    border-radius: 10px; /* Bo góc ảnh (nếu cần) */
+}
+
+/* Phần bên phải */
+.left-section,
+.right-section {
+    flex: 1; /* Chiếm tối đa không gian còn lại */
+    text-align: center; /* Căn chữ ở giữa */
+}
+
+/* Tiêu đề Định nghĩa */
+.definition-heading {
+    font-size: 32px; /* Kích thước chữ */
+    font-weight: 700; /* Chữ đậm */
+    margin-bottom: 20px; /* Khoảng cách với đoạn text */
+}
+
+/* Phần mô tả */
+.definition-text {
+    text-align: left; /* Căn lề trái */
+    font-size: 16px; /* Kích thước chữ */
+    line-height: 1.5; /* Dòng cách nhau hợp lý */
+    margin-top: 10px;
+}
+
+.definition-text li {
+    margin-bottom: 15px; /* Khoảng cách giữa các mục */
 }
 
 @keyframes animate {
