@@ -25,7 +25,7 @@
 }
 
 header {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -88,7 +88,11 @@ body {
     height: 2px;
 }
 
-.navigation ul li a:hover:after {
+.home:hover:after,
+.guide:hover:after,
+.job:hover:after,
+.prof:hover:after,
+.mat:hover:after {
     width: 77%;
 }
 
@@ -189,6 +193,16 @@ body {
     background: url(image/job.png) no-repeat center center;
 }
 
+#prof-content .start-section {
+    padding: 200px 300px;
+    background: url(image/prof.png) no-repeat center center;
+}
+
+#mat-content .start-section {
+    padding: 200px 300px;
+    background: url(image/job.png) no-repeat center center;
+}
+
 #developer-content .start-section {
     padding: 250px 300px;
     background: url(image/developer-1.jpg) no-repeat center center;
@@ -198,6 +212,24 @@ body {
 #interpreter-content .start-section {
     padding: 250px 300px;
     background: url(image/interpreter-1.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+#architect-content .start-section {
+    padding: 250px 300px;
+    background: url(image/architect-1.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+#manager-content .start-section {
+    padding: 250px 300px;
+    background: url(image/manager-1.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+#growth-content .start-section {
+    padding: 250px 300px;
+    background: url(image/growth-1.jpg) no-repeat center center;
     background-size: cover;
 }
 
@@ -221,6 +253,7 @@ body {
     background: url(image/background.jpg);
 }
 
+.mid-section3,
 .end-section2 {
     position: relative;
     box-sizing: border-box;
@@ -236,12 +269,14 @@ body {
     font-weight: 400;
 }
 
+.mid-section3 p,
 .end-section2 p,
 .end-section p {
     font-size: 24px;
     font-weight: 500;
 }
 
+.mid-section3 .main-heading,
 .end-section2 .main-heading,
 .end-section .main-heading,
 .start-section .main-heading {
@@ -255,11 +290,14 @@ body {
     color: white;
 }
 
+.mid-section3 p,
+.mid-section3 .main-heading,
 .end-section2 p,
 .end-section2 .main-heading {
     color: black;
 }
 
+.text-section3,
 .text-section2 {
     text-align: center;
     padding-top: 120px;
@@ -555,6 +593,10 @@ body {
     color: #1dcbcb;
 }
 
+.main-classify1, .main-classify2 {
+    display: block;
+}
+
 .sub-section {
     display: flex; 
     margin-bottom: 25px; 
@@ -658,12 +700,21 @@ body {
     animation: animate 1s ease-in-out 0.3s 1 forwards;
 }
 
-.contents-item button {
+.button-link {
+    display: inline-block;
     padding: 10px 20px;
-    border: none;
-    cursor: pointer;
+    background-color: #f0f0f0;
+    color: black;
+    font-weight: 400;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s;
     opacity: 0;
     animation: animate 1s ease-in-out 0.6s 1 forwards;
+}
+
+.button-link:hover {
+    background-color: #aaa;
 }
 
 .section2-button {
@@ -692,10 +743,10 @@ body {
 .opportunity-section,
 .requirement-section,
 .info-section {
-    display: flex; /* Sử dụng flex để tạo bố cục 2 cột */
-    justify-content: space-between; /* Dàn đều khoảng cách giữa các phần */
-    align-items: flex-start; /* Canh trên cùng */
-    gap: 45px; /* Khoảng cách giữa các cột */
+    display: flex; 
+    justify-content: space-between; 
+    align-items: flex-start; 
+    gap: 45px; 
 }
 
 .info-section {
@@ -707,38 +758,74 @@ body {
     padding: 65px 100px 0px 100px;
 }
 
-/* Phần bên trái chứa hình ảnh */
 .right-section img,
 .left-section img {
-    max-width: 100%; /* Đảm bảo ảnh không vượt quá kích thước container */
-    height: 320px; /* Giữ tỷ lệ của ảnh */
-    border-radius: 10px; /* Bo góc ảnh (nếu cần) */
+    max-width: 100%; 
+    height: 320px; 
+    border-radius: 10px; 
 }
 
-/* Phần bên phải */
 .left-section,
 .right-section {
-    flex: 1; /* Chiếm tối đa không gian còn lại */
-    text-align: center; /* Căn chữ ở giữa */
+    flex: 1; 
+    text-align: center; 
 }
 
-/* Tiêu đề Định nghĩa */
 .definition-heading {
-    font-size: 32px; /* Kích thước chữ */
-    font-weight: 700; /* Chữ đậm */
-    margin-bottom: 20px; /* Khoảng cách với đoạn text */
+    font-size: 32px; 
+    font-weight: 700; 
+    margin-bottom: 20px; 
 }
 
-/* Phần mô tả */
 .definition-text {
-    text-align: left; /* Căn lề trái */
-    font-size: 16px; /* Kích thước chữ */
-    line-height: 1.5; /* Dòng cách nhau hợp lý */
+    text-align: left;
+    font-size: 16px; 
+    line-height: 1.5; 
     margin-top: 10px;
 }
 
 .definition-text li {
-    margin-bottom: 15px; /* Khoảng cách giữa các mục */
+    margin-bottom: 15px; 
+}
+
+.prof-list {
+    padding: 0px 50px;
+}
+
+.prof-list .member {
+    position: relative;
+    padding: 30px;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    background: white;
+    display: flex;
+}
+
+.prof-list .member .teampic {
+    overflow: hidden;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.prof-list .member .member-info {
+    padding-left: 30px;
+}
+
+.prof-list .member h4 {
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: tomato;
+}
+
+.prof-list .member span {
+    display: block;
+    font-size: 15px;
+    padding-bottom: 10px;
+    position: relative;
+    font-weight: 500;
 }
 
 @keyframes animate {

@@ -117,4 +117,22 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('mat-content').style.display = 'block';
         window.addEventListener('scroll', onScrollChangeHeader);
     });
+
+    document.querySelectorAll('.button-link').forEach(link => {
+        link.addEventListener('click', function (event) {
+            event.preventDefault();
+            const target = this.getAttribute('href').substring(1) + '-content';
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.style.display = 'none';
+            });
+            const targetElement = document.getElementById(target);
+            targetElement.style.display = 'block';
+            
+            // Đặt cuộn về đầu trang
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+
+            window.addEventListener('scroll', onScrollChangeHeader);
+        });
+    });
 });
